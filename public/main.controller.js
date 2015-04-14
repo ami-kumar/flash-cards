@@ -1,6 +1,6 @@
 app.controller('MainController', function ($scope, FlashCardsFactory) {
 	console.log(FlashCardsFactory.getFlashCards())
-	$scope.flashCards = FlashCardsFactory;
+	$scope.flashCards = FlashCardsFactory.getFlashCards();
 
 	$scope.answerQuestion = function (answer, flashCard) {
 		if (!flashCard.answered) {

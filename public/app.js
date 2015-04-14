@@ -27,16 +27,20 @@ app.value('whateverName', [
     }
 ]);
 
-// create an Angular factor that will make an AJAX request
+// create an Angular factory that will make an AJAX request
 //  to the server
 app.factory('FlashCardsFactory', function($http) {
     return { 
         getFlashCards: function() {
             // build an AJAX call
-            $http.get("/cards")
+            return $http.get("/cards")
                 .then(function(response) {
                     return response.data
                 })
+        },
+        getHello: function() { // debugging
+            return "hello"
         }
     }
 })
+
