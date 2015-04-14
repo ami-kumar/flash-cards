@@ -37,9 +37,6 @@ app.factory('FlashCardsFactory', function($http) {
                 .then(function(response) {
                     return response.data
                 })
-        },
-        getHello: function() { // debugging
-            return "hello"
         }
     }
 })
