@@ -15,4 +15,16 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
 			flashCard.answeredCorrectly = answer.correct;
 		}
 	}
+
+	$scope.getCategoryCards = function(category) {
+		console.log(category)
+		// if there is a category, add it to the $http call
+		//	to the server
+
+		// implement call to FlashCardFactory.getFlashCards
+		// 	take filtered flash cards, replace the existing
+		//	flashCards on the $scope
+		$scope.flashCards = FlashCardsFactory.getFlashCards(category)
+		console.log($scope.flashCards)
+	}
 });
