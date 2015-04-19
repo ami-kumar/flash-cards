@@ -1,6 +1,8 @@
 app.controller('MainController', function ($scope, FlashCardsFactory) {
-	console.log(FlashCardsFactory.getFlashCards())
-	$scope.flashCards = FlashCardsFactory.getFlashCards();
+	FlashCardsFactory.getFlashCards().then(function(cards) {
+		$scope.flashCards = cards
+	})
+	console.log($scope.flashCards)
 
 	$scope.categories = [
 		'MongoDB', 
@@ -24,7 +26,9 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
 		// implement call to FlashCardFactory.getFlashCards
 		// 	take filtered flash cards, replace the existing
 		//	flashCards on the $scope
-		$scope.flashCards = FlashCardsFactory.getFlashCards(category)
+		FlashCardsFactory.getFlashCards(category).then(function(cards) {
+			$scope.flashCards = cards
+		})
 		console.log($scope.flashCards)
 	}
 });

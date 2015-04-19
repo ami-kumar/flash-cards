@@ -41,8 +41,8 @@ app.factory('FlashCardsFactory', function($http) {
             return $http.get("/cards", {
                 params: queryParams
             }).then(function(response) {
-                    return response.data
-                })
+                return response.data
+            })
         }
     }
 })
