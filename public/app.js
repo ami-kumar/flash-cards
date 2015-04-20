@@ -27,38 +27,7 @@ var app = angular.module('flashCards', []);
 //     }
 // ]);
 
-// create an Angular factory that will make an AJAX request
-//  to the server
-app.factory('FlashCardsFactory', function($http) {
-    return { 
-        getFlashCards: function(category) {
-            var queryParams = {}
 
-            if (category) {
-                queryParams.category = category;
-            }
-            // build an AJAX call
-            return $http.get("/cards", {
-                params: queryParams
-            }).then(function(response) {
-                return response.data
-            })
-        }
-    }
-})
 
-app.factory('ScoreFactory', function () {
-    // facilitate communication between StatsController and flash card
-    //  controllers
 
-    return {
-        correct: 0,
-        incorrect: 0
-    }
-})
-
-app.controller('StatsController', function ($scope, ScoreFactory) {
-    $scope.scores = ScoreFactory;
-    console.log($scope.scores)
-});
 
