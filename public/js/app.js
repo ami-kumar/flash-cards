@@ -27,8 +27,12 @@ var app = angular.module('flashCards', []);
 //     }
 // ]);
 
-app.filter('name', function() {
-    return function(s) {
-        return s
+app.filter('cheat', function() {
+
+    // get rid of incorrect answers and only include correct ones
+    return function(answers) {
+        return answers.filter(function(element) {
+            return element.correct
+        })
     }
 })
