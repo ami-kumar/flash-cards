@@ -28,6 +28,24 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
 		//	flashCards on the $scope
 		FlashCardsFactory.getFlashCards(category).then(function(cards) {
 			$scope.flashCards = cards
+			$scope.category = category
+
+			console.log(cards)
+			console.log(category)
+		})
+	}
+
+	$scope.activeCategory = function(category) {
+		if (category == $scope.category) {
+			return true
+		} else {
+			return false
+		}
+	}
+
+	$scope.resetCategory = function() {
+		FlashCardsFactory.getFlashCards().then(function(cards) {
+			$scope.flashCards = cards
 		})
 		console.log($scope.flashCards)
 	}

@@ -10,7 +10,11 @@
         <button 
             ng-repeat="category in categories"
             class="category-button"
+            ng-class = "activeCategory(category) ? 'active' : category-button"
             ng-click="getCategoryCards(category)">{{category}}</button>
+        <button
+            class = "category-button"
+            ng-click = "resetCategory()">Reset Category</button>
     	<div
     		ng-repeat="flashCard in flashCards | orderBy : 'question'"
     		class="flash-card">
@@ -29,8 +33,8 @@
     	        <span ng-show="!flashCard.answeredCorrectly">Nope, you got it wrong.</span>
     	    </h2>
             <h3>
-                {{category}} 
-                <!-- Is this correct way to display h3 category? -->
+                {{flashCard.category}} 
+                <!-- where is the class with style for .flash-card h3? -->
             </h3>
     	</div>
     	<script src="angular.js"></script>
