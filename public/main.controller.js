@@ -1,4 +1,4 @@
-app.controller('MainController', function ($scope, FlashCardsFactory) {
+app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
 	FlashCardsFactory.getFlashCards().then(function(cards) {
 		$scope.flashCards = cards
 	})
@@ -15,6 +15,11 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
 		if (!flashCard.answered) {
 			flashCard.answered = true;
 			flashCard.answeredCorrectly = answer.correct;
+		}
+		if (answer.correct) {
+			ScoreFactory.correct++
+		} else {
+			ScoreFactory.incorrect++
 		}
 	}
 
