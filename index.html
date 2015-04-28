@@ -8,7 +8,10 @@
     </head>
 
     <body ng-app="flashCards">
+        <loader></loader>
+
         <div ng-controller="MainController">
+
             <button 
                 ng-repeat="category in categories"
                 class="category-button"
@@ -50,6 +53,7 @@
         <script src="js/controllers/StatsController.js"></script>
         <script src="js/factories/FlashCardsFactory.js"></script>
         <script src="js/factories/ScoreFactory.js"></script>
+        <script src ="js/directives/loader/loader.js"></script>
 
     </body> 
 </html>
