@@ -54,4 +54,22 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 		})
 		console.log($scope.flashCards)
 	}
+
+	$scope.flashCardsLoaded = function() {
+		if ($scope.flashCards) {
+			console.log("flashcards have been loaded")
+			return true
+		} else {
+			console.log("flashcards have not been loaded")
+			return false
+		}
+	}
+
+	$scope.flashCardsNotLoaded = function() {
+		if ($scope.flashCards) {
+			return false
+		} else {
+			return true
+		}
+	}
 });

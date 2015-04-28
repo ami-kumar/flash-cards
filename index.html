@@ -8,9 +8,9 @@
     </head>
 
     <body ng-app="flashCards">
-        <loader></loader>
+        <loader ng-controller = "MainController" ng-show="flashCardsNotLoaded()"></loader>
 
-        <div ng-controller="MainController">
+        <div ng-controller="MainController" ng-show="flashCardsLoaded()">
 
             <button 
                 ng-repeat="category in categories"
