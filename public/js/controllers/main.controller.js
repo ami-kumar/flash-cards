@@ -67,8 +67,10 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 
 	$scope.flashCardsNotLoaded = function() {
 		if ($scope.flashCards) {
+			console.log("Take off loader")
 			return false
 		} else {
+			console.log("Keep on loader")
 			return true
 		}
 	}

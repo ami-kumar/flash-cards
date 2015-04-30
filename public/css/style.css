@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box; }
 
+.loader {
+  height: 30px;
+  width: 30px;
+}
+
 .category-button {
   border: 1px solid black;
   background: none;

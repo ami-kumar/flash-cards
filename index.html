@@ -20,7 +20,10 @@
             <button
                 class = "category-button"
                 ng-click = "resetCategory()">Reset Category</button>
-        	<div
+
+            <flashcard></flashcard>
+            
+            <div
         		ng-repeat="flashCard in flashCards | orderBy : 'question'"
         		class="flash-card">
         	    <h1>{{ flashCard.question | uppercase }}</h1>
@@ -41,7 +44,7 @@
                     {{flashCard.category}} 
                     <!-- where is the class with style for .flash-card h3? -->
                 </h3>
-        	</div>
+        	</div> 
 
         </div>
 
@@ -54,6 +57,7 @@
         <script src="js/factories/FlashCardsFactory.js"></script>
         <script src="js/factories/ScoreFactory.js"></script>
         <script src ="js/directives/loader/loader.js"></script>
+        <script src ="js/directives/flashcard/flashcard.js"></script>
 
     </body> 
 </html>
