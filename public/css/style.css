@@ -6,6 +6,11 @@
   width: 30px;
 }
 
+.border {
+  border: 2px;
+  color: black;
+}
+
 .category-button {
   border: 1px solid black;
   background: none;
