@@ -8,11 +8,15 @@
     </head>
 
     <body ng-app="flashCards">
+        <borderonhover>
+            <p>HIII</p>
+        </borderonhover>
+
+
         <loader ng-controller = "MainController" ng-show="flashCardsNotLoaded()"></loader>
 
         <div ng-controller="MainController" ng-show="flashCardsLoaded()">
 
-            <!-- <borderonhover>  -->
             <button 
                 ng-repeat="category in categories"
                 class="category-button"
@@ -21,7 +25,6 @@
             <button
                 class = "category-button"
                 ng-click = "resetCategory()">Reset Category</button>
-            <!-- </borderonhover> -->
 
             <!-- <flashcard></flashcard> -->
 

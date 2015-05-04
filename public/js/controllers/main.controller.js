@@ -1,6 +1,7 @@
 app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
 	FlashCardsFactory.getFlashCards().then(function(cards) {
 		$scope.flashCards = cards
+		console.log('flashcards loaded')
 	})
 	console.log($scope.flashCards)
 

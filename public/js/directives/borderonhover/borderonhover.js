@@ -10,9 +10,11 @@ app.directive('borderonhover', function() {
 					console.log(element.html())
 				} 
 				console.log(element.html())
+				console.log('is this working?')
 			})
 			element.on('mouseover', function() {
 				// take away 2 px solid border to element
+				console.log('yay')
 			})
 		}
 	}
