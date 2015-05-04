@@ -12,6 +12,7 @@
 
         <div ng-controller="MainController" ng-show="flashCardsLoaded()">
 
+            <!-- <borderonhover>  -->
             <button 
                 ng-repeat="category in categories"
                 class="category-button"
@@ -20,13 +21,13 @@
             <button
                 class = "category-button"
                 ng-click = "resetCategory()">Reset Category</button>
+            <!-- </borderonhover> -->
 
             <!-- <flashcard></flashcard> -->
 
             <flashcard 
                 ng-repeat = "flashCard in flashCards | orderBy: 'question'"
-                class = "flash-card"
-            > </flashcard>
+                card = "flashCard"></flashcard>
 
 <!--             <flashcard 
                 ng-repeat="flashCard in flashCards | orderBy : 'question'"

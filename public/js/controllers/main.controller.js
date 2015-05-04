@@ -1,8 +1,8 @@
 app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
-	// FlashCardsFactory.getFlashCards().then(function(cards) {
-	// 	$scope.flashCards = cards
-	// })
-	// console.log($scope.flashCards)
+	FlashCardsFactory.getFlashCards().then(function(cards) {
+		$scope.flashCards = cards
+	})
+	console.log($scope.flashCards)
 
 	$scope.categories = [
 		'MongoDB', 
@@ -55,23 +55,23 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 		console.log($scope.flashCards)
 	}
 
-	// $scope.flashCardsLoaded = function() {
-	// 	if ($scope.flashCards) {
-	// 		console.log("flashcards have been loaded")
-	// 		return true
-	// 	} else {
-	// 		console.log("flashcards have not been loaded")
-	// 		return false
-	// 	}
-	// }
+	$scope.flashCardsLoaded = function() {
+		if ($scope.flashCards) {
+			console.log("flashcards have been loaded")
+			return true
+		} else {
+			console.log("flashcards have not been loaded")
+			return false
+		}
+	}
 
-	// $scope.flashCardsNotLoaded = function() {
-	// 	if ($scope.flashCards) {
-	// 		console.log("Take off loader")
-	// 		return false
-	// 	} else {
-	// 		console.log("Keep on loader")
-	// 		return true
-	// 	}
-	// }
+	$scope.flashCardsNotLoaded = function() {
+		if ($scope.flashCards) {
+			console.log("Take off loader")
+			return false
+		} else {
+			console.log("Keep on loader")
+			return true
+		}
+	}
 });
